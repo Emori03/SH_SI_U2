@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-02-2024 a las 17:37:18
+-- Tiempo de generación: 23-02-2024 a las 17:18:10
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `calificaciones`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(50) DEFAULT NULL,
+  `comentario` text DEFAULT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -44,6 +57,20 @@ INSERT INTO `ivs` (`IV`, `UsuarioId`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `trabajos`
+--
+
+CREATE TABLE `trabajos` (
+  `TrabajoId` int(11) NOT NULL,
+  `Trabajo` varchar(100) NOT NULL,
+  `DocenteId` varchar(100) NOT NULL,
+  `MateriaId` int(11) NOT NULL,
+  `FechaEntrega` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuarios`
 --
 
@@ -64,27 +91,6 @@ INSERT INTO `usuarios` (`UsuarioId`, `UsuarioNombre`, `UsuarioContrasena`, `Usua
 ('RnoVNSXJMx7XMC2Uf0toUA==', 'Emori', 'cDKmIgiNFD3IhZbp9VcL0Q==', 'Administrador');
 
 --
--- Estructura de tabla para la tabla `comentarios`
---
-
-CREATE TABLE `comentarios` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(50) DEFAULT NULL,
-  `comentario` text DEFAULT NULL,
-  `fecha` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `comentarios`
---
-
-INSERT INTO `comentarios` (`id`, `nombre`, `comentario`, `fecha`) VALUES
-(7, 'Cigladi', 'Comentario de prueba', '2024-02-21 20:34:39'),
-(8, 'emori', 'hola', '2024-02-22 00:41:41');
-
--- --------------------------------------------------------
-
---
 -- Índices para tablas volcadas
 --
 
@@ -94,7 +100,6 @@ INSERT INTO `comentarios` (`id`, `nombre`, `comentario`, `fecha`) VALUES
 ALTER TABLE `comentarios`
   ADD PRIMARY KEY (`id`);
 
-
 --
 -- Indices de la tabla `ivs`
 --
@@ -102,10 +107,34 @@ ALTER TABLE `ivs`
   ADD KEY `UsuarioId` (`UsuarioId`);
 
 --
+-- Indices de la tabla `trabajos`
+--
+ALTER TABLE `trabajos`
+  ADD PRIMARY KEY (`TrabajoId`),
+  ADD KEY `DocenteId` (`DocenteId`),
+  ADD KEY `MateriaId` (`MateriaId`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`UsuarioId`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `trabajos`
+--
+ALTER TABLE `trabajos`
+  MODIFY `TrabajoId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -116,13 +145,13 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `ivs`
   ADD CONSTRAINT `ivs_ibfk_1` FOREIGN KEY (`UsuarioId`) REFERENCES `usuarios` (`UsuarioId`);
-COMMIT;
 
 --
--- AUTO_INCREMENT de la tabla `comentarios`
+-- Filtros para la tabla `trabajos`
 --
-ALTER TABLE `comentarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE `trabajos`
+  ADD CONSTRAINT `trabajos_ibfk_1` FOREIGN KEY (`DocenteId`) REFERENCES `usuarios` (`UsuarioId`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
