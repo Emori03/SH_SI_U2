@@ -31,7 +31,7 @@ try {
         
     // Ejecutar la consulta
     $desencriptar->execute();
-
+ 
     header("location:../index.html");
 } catch(PDOException $e) {
     echo "Error al registrar usuario: " . $e->getMessage();
