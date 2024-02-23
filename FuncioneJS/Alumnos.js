@@ -8,13 +8,11 @@ function resivirDatos() {
       return response.json();
     })
     .then(data => {
-        console.log(data)
         var tbody = document.getElementById("trabajos");
         for (let i = 0; i < data.length; i++) {
-            console.log(data[i].DocenteId)
             var tr = document.createElement("tr");
             var tdDocente = document.createElement("td");
-            tdDocente.textContent = data[i].DocenteId;
+            tdDocente.textContent = data[i].Docente;
             tr.appendChild(tdDocente);
             var tdMateria = document.createElement("td");
             tdMateria.textContent = data[i].MateriaId;
@@ -27,10 +25,11 @@ function resivirDatos() {
             tr.appendChild(tdFecha);
             var tdBtn = document.createElement("td");
             var btn = document.createElement("Button");
-            var a = document.createElement("a");
-            a.setAttribute("href", "../FuncionesPHP/retro.php");
-            a.textContent = "Deja tu retroalimentacion";
-            btn.appendChild(a);
+            btn.textContent = "Retroalimentacion";
+            btn.setAttribute("type", "button");
+            btn.classList.add("btn", "btn-outline-primary");
+            btn.setAttribute("data-bs-toggle", "modal");
+            btn.setAttribute("data-bs-target", "#retroalimentacionModal");
             tdBtn.appendChild(btn);
             tr.appendChild(tdBtn);
             tbody.appendChild(tr)
