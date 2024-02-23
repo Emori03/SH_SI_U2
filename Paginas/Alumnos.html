@@ -34,11 +34,107 @@
             </div>
         </div>
     </nav>
+ <style>
+    /* Estilos tabla */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
 
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f2f2f2;
+        }
+
+        .task-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .task-table tr:hover {
+            background-color: #f2f2f2;
+        }
+
+        .comment-section {
+            width: 200px;
+        }
+
+        .comment-section h2 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+    </style>
     <div id="tareas" class="container">
         <h1>Hello Tareas</h1>
-    </div>
-
+        <div>
+            <div class="container">
+                <table class="task-table">
+                    <thead>
+            <!-- Encabezados de tabla -->
+                        <tr>
+                            <th>Docente</th>
+                            <th>Materia</th>
+                            <th>Tarea</th>
+                            <th>Fecha de Vencimiento</th>
+                            <th>Comentarios</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Info de tabla -->
+                        <tr>
+                            <td>Gabriel A. Reyes</td>
+                            <td>Seguridad Informatica</td>
+                            <td>Saber Hacer Unidad 2</td>
+                            <td>2024-02-26</td>
+                            <td>
+                                <!-- Boton sistema de comentarios -->
+                             <button> <a href="../FuncionesPHP/retro.php">Deja tu retroalimentacion</a></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Olga Maricela</td>
+                            <td>Matematicas para la ingenieria</td>
+                            <td>Saber Unidad 3</td>
+                            <td>2024-02-22</td>
+                            <td>
+                                <!-- Boton sistema de comentarios -->
+                                <button> <a href="../FuncionesPHP/retro.php">Deja tu retroalimentacion</a></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Azcucena Vallejo Casas</td>
+                            <td>Metodologia de la programacion</td>
+                            <td>Saber Unidad 3</td>
+                            <td>2024-02-26</td>
+                            <td>
+                                <!-- Boton sistema de comentarios -->
+                                <button> <a href="../FuncionesPHP/retro.php">Deja tu retroalimentacion</a></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     <div id="calificaciones" class="container ch">
         <h1>Hello Calificaciones</h1>
     </div>
