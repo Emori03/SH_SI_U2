@@ -62,6 +62,7 @@ form button:hover {
         <!-- <h2>Comentarios:</h2>
         <div id="comentarios">
             <?php include 'conexion.php'; ?>
+            
         </div> -->
     </div>
 </body>
