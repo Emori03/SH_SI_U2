@@ -22,13 +22,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Inicio</button>
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                            data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                            aria-selected="true">Inicio</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="tareas-tab" data-bs-toggle="tab" data-bs-target="#tareas-tab-pane" type="button" role="tab" aria-controls="tareas-tab-pane" aria-selected="false">Tareas</button>
+                        <button class="nav-link" id="tareas-tab" data-bs-toggle="tab" data-bs-target="#tareas-tab-pane"
+                            type="button" role="tab" aria-controls="tareas-tab-pane"
+                            aria-selected="false">Tareas</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="calificaciones-tab" data-bs-toggle="tab" data-bs-target="#calificaciones-tab-pane" type="button" role="tab" aria-controls="calificaciones-tab-pane" aria-selected="false">Calificaiones</button>
+                        <button class="nav-link" id="calificaciones-tab" data-bs-toggle="tab"
+                            data-bs-target="#calificaciones-tab-pane" type="button" role="tab"
+                            aria-controls="calificaciones-tab-pane" aria-selected="false">Calificaciones</button>
                     </li>
                 </ul>
 
@@ -36,7 +42,8 @@
         </div>
     </nav>
     <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+            tabindex="0">
             <h1>Hello</h1>
         </div>
         <div class="tab-pane fade" id="tareas-tab-pane" role="tabpanel" aria-labelledby="tareas-tab" tabindex="0">
@@ -58,12 +65,14 @@
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="calificaciones-tab-pane" role="tabpanel" aria-labelledby="calificaciones-tab" tabindex="0">
+        <div class="tab-pane fade" id="calificaciones-tab-pane" role="tabpanel" aria-labelledby="calificaciones-tab"
+            tabindex="0">
             <h1>Hello Calificaciones</h1>
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="retroalimentacionModal" tabindex="-1" aria-labelledby="retroalimentacionModalLabel" aria-hidden="true">
+    <div class="modal fade" id="retroalimentacionModal" tabindex="-1" aria-labelledby="retroalimentacionModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -72,17 +81,20 @@
                 </div>
                 <div class="modal-body">
                     <h2>Deja tus comentarios:</h2>
-                    <form action="retro2.php" method="post" class="form">
+                    <form action="../FuncionesPHP/Comentario.php" method="post" class="form">
+                        <input type="hidden" name="trabajo" id="trabajo">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label for="comentario" class="form-label">Comentarios:</label>
-                            <textarea class="form-control"  id="comentario" name="comentario" placeholder="Comentario" rows="4" required></textarea>
+                            <textarea class="form-control" id="comentario" name="comentario" placeholder="Comentario"
+                                rows="4" required></textarea>
                         </div>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-outline-primary">Enviar comentario</button>
+                            <button type="submit" class="btn btn-outline-primary">Enviar comentario</button>
                             <button type="reset" class="btn btn-outline-danger" value="Reset">Limpiar</button>
                         </div>
                     </form>

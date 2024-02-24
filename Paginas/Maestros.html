@@ -48,7 +48,19 @@
             <h1>Hello</h1>
         </div>
         <div class="tab-pane fade" id="tareas-tab-pane" role="tabpanel" aria-labelledby="tareas-tab" tabindex="0">
-            <h1>Hello</h1>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <!-- Encabezados de tabla -->
+                    <tr>
+                        <th>Docente</th>
+                        <th>Materia</th>
+                        <th>Tarea</th>
+                        <th>Fecha de Vencimiento</th>
+                        <th>Comentarios</th>
+                    </tr>
+                </thead>
+                <tbody id="trabajos"></tbody>
+            </table>
         </div>
         <div class="tab-pane fade" id="calificaciones-tab-pane" role="tabpanel" aria-labelledby="calificaciones-tab"
             tabindex="0">
@@ -77,7 +89,6 @@
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Apellido</th>
                                     <th scope="col">Calificación</th>
-
                                 </tr>
                             </thead>
                             <tbody>
@@ -112,7 +123,6 @@
                         <label for="calificacion" class="form-label"><b> Calificación </b></label>
                         <input type="number" class="form-control" id="calificacion" name="calificacion">
                     </div>
-
                     <button type="submit" class="btn btn-outline-primary">Subir</button>
                 </form>
             </div>
