@@ -63,6 +63,25 @@ INSERT INTO `estudiantes` (`id`, `nombre`, `apellido`, `calificacion`) VALUES
 (1, 'jorge', 'neira', 8),
 (2, 'emori', 'alvarado', 8);
 
+CREATE TABLE `estudiantes` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `trabajoId` int(11) NOT NULL,
+  `calificacion` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `estudiantes`
+--
+
+INSERT INTO `estudiantes` (`id`, `nombre`, `trabajoId`, `calificacion`) VALUES
+(6, 'cigladi', 0, 'ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d'),
+(7, 'si', 0, '2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3'),
+(8, '', 0, 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'),
+(9, '', 0, 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'),
+(10, 'chamba', 1, '4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce'),
+(11, 'lo que quiera', 4, '4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5');
+
 -- --------------------------------------------------------
 
 --
@@ -119,7 +138,17 @@ CREATE TABLE `trabajos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
+--
+-- Estructura de tabla para la tabla `materia`
+--
 
+CREATE TABLE `materia` (
+  `MateriaId` int(100) NOT NULL,
+  `Nombre` int(100) NOT NULL,
+  `DocenteId` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
 --
 -- Estructura de tabla para la tabla `usuarios`
 --
@@ -184,6 +213,13 @@ ALTER TABLE `ivs`
   ADD KEY `UsuarioId` (`UsuarioId`);
 
 --
+-- Indices de la tabla `materia`
+--
+ALTER TABLE `materia`
+  ADD PRIMARY KEY (`MateriaId`),
+  ADD KEY `DocenteId` (`DocenteId`);
+
+--
 -- Indices de la tabla `trabajos`
 --
 ALTER TABLE `trabajos`
@@ -218,6 +254,13 @@ ALTER TABLE `estudiantes`
 --
 ALTER TABLE `trabajos`
   MODIFY `TrabajoId` int(11) NOT NULL AUTO_INCREMENT;
+
+  --
+-- AUTO_INCREMENT de la tabla `materia`
+--
+ALTER TABLE `materia`
+  MODIFY `MateriaId` int(100) NOT NULL AUTO_INCREMENT;
+
 
 --
 -- Restricciones para tablas volcadas
