@@ -8,138 +8,95 @@
     <link rel="icon" href="Imagenes/Icono.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="Estilos/main.css">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Bienvenido</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Inicio</button>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tareas">Tareas</a>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tareas-tab" data-bs-toggle="tab" data-bs-target="#tareas-tab-pane" type="button" role="tab" aria-controls="tareas-tab-pane" aria-selected="false">Tareas</button>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#calificaciones">Calificaciones</a>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="calificaciones-tab" data-bs-toggle="tab" data-bs-target="#calificaciones-tab-pane" type="button" role="tab" aria-controls="calificaciones-tab-pane" aria-selected="false">Calificaiones</button>
                     </li>
                 </ul>
+
             </div>
         </div>
     </nav>
- <style>
-    /* Estilos tabla */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .task-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        .task-table th, .task-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        .task-table th {
-            background-color: #f2f2f2;
-        }
-
-        .task-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        .task-table tr:hover {
-            background-color: #f2f2f2;
-        }
-
-        .comment-section {
-            width: 200px;
-        }
-
-        .comment-section h2 {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-    </style>
-    <div id="tareas" class="container">
-        <h1>Hello Tareas</h1>
-        <div>
-            <div class="container">
-                <table class="task-table">
-                    <thead>
-            <!-- Encabezados de tabla -->
-                        <tr>
-                            <th>Docente</th>
-                            <th>Materia</th>
-                            <th>Tarea</th>
-                            <th>Fecha de Vencimiento</th>
-                            <th>Comentarios</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Info de tabla -->
-                        <tr>
-                            <td>Gabriel A. Reyes</td>
-                            <td>Seguridad Informatica</td>
-                            <td>Saber Hacer Unidad 2</td>
-                            <td>2024-02-26</td>
-                            <td>
-                                <!-- Boton sistema de comentarios -->
-                             <button> <a href="../FuncionesPHP/retro.php">Deja tu retroalimentacion</a></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Olga Maricela</td>
-                            <td>Matematicas para la ingenieria</td>
-                            <td>Saber Unidad 3</td>
-                            <td>2024-02-22</td>
-                            <td>
-                                <!-- Boton sistema de comentarios -->
-                                <button> <a href="../FuncionesPHP/retro.php">Deja tu retroalimentacion</a></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Azcucena Vallejo Casas</td>
-                            <td>Metodologia de la programacion</td>
-                            <td>Saber Unidad 3</td>
-                            <td>2024-02-26</td>
-                            <td>
-                                <!-- Boton sistema de comentarios -->
-                                <button> <a href="../FuncionesPHP/retro.php">Deja tu retroalimentacion</a></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+            <h1>Hello</h1>
+        </div>
+        <div class="tab-pane fade" id="tareas-tab-pane" role="tabpanel" aria-labelledby="tareas-tab" tabindex="0">
+            <div>
+                <div class="container">
+                    <table class="table table-striped">
+                        <thead class="table-dark">
+                            <!-- Encabezados de tabla -->
+                            <tr>
+                                <th>Docente</th>
+                                <th>Materia</th>
+                                <th>Tarea</th>
+                                <th>Fecha de Vencimiento</th>
+                                <th>Comentarios</th>
+                            </tr>
+                        </thead>
+                        <tbody id="trabajos"></tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    <div id="calificaciones" class="container ch">
-        <h1>Hello Calificaciones</h1>
+        <div class="tab-pane fade" id="calificaciones-tab-pane" role="tabpanel" aria-labelledby="calificaciones-tab" tabindex="0">
+            <h1>Hello Calificaciones</h1>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="retroalimentacionModal" tabindex="-1" aria-labelledby="retroalimentacionModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="retroalimentacionModalLabel">Retroalimentación</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h2>Deja tus comentarios:</h2>
+                    <form action="retro2.php" method="post" class="form">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="comentario" class="form-label">Comentarios:</label>
+                            <textarea class="form-control"  id="comentario" name="comentario" placeholder="Comentario" rows="4" required></textarea>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-primary">Enviar comentario</button>
+                            <button type="reset" class="btn btn-outline-danger" value="Reset">Limpiar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<script src="FuncionesJS/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+<script src="../FuncioneJS/Alumnos.js"></script>
+
 </html>

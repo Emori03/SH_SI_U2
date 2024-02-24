@@ -107,6 +107,20 @@ INSERT INTO `ivs` (`IV`, `UsuarioId`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `trabajos`
+--
+
+CREATE TABLE `trabajos` (
+  `TrabajoId` int(11) NOT NULL,
+  `Trabajo` varchar(100) NOT NULL,
+  `DocenteId` varchar(100) NOT NULL,
+  `MateriaId` int(11) NOT NULL,
+  `FechaEntrega` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuarios`
 --
 
@@ -170,6 +184,14 @@ ALTER TABLE `ivs`
   ADD KEY `UsuarioId` (`UsuarioId`);
 
 --
+-- Indices de la tabla `trabajos`
+--
+ALTER TABLE `trabajos`
+  ADD PRIMARY KEY (`TrabajoId`),
+  ADD KEY `DocenteId` (`DocenteId`),
+  ADD KEY `MateriaId` (`MateriaId`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -192,6 +214,12 @@ ALTER TABLE `estudiantes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT de la tabla `trabajos`
+--
+ALTER TABLE `trabajos`
+  MODIFY `TrabajoId` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Restricciones para tablas volcadas
 --
 
@@ -200,6 +228,12 @@ ALTER TABLE `estudiantes`
 --
 ALTER TABLE `ivs`
   ADD CONSTRAINT `ivs_ibfk_1` FOREIGN KEY (`UsuarioId`) REFERENCES `usuarios` (`UsuarioId`);
+
+--
+-- Filtros para la tabla `trabajos`
+--
+ALTER TABLE `trabajos`
+  ADD CONSTRAINT `trabajos_ibfk_1` FOREIGN KEY (`DocenteId`) REFERENCES `usuarios` (`UsuarioId`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
