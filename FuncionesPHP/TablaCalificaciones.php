@@ -1,37 +1,35 @@
 <?php
 require_once 'Conexion.php';
 
+$query = "SELECT * FROM estudiantes";
+$calificaciones = $conexion->prepare($query);
+$calificaciones ->execute();
+$array = array();
+if (true) {
+    // Iterar sobre los resultados y mostrarlos en la tabla
+    while ($row = $calificaciones -> fetch(PDO::FETCH_ASSOC)) {
+        $calificacion = 0;
 
+        for ( $i = 1; $i < 10; $i +=  0.1){
+            $comparacion = hash("sha256",$i);
+
+        if ($comparacion == $row['calificacion'])
+        {
+            $calificacion = $i;
+            break;        
+        }
+        }
+        $datos= array(
+            "Id" => $row['id'],
+            "Nombre" => $row['nombre'],
+            "Trabajo" => $row['trabajoId'],
+            "Calificacion" => $calificacion
+        );
+        $array[] = $datos;
+    }
+    header('Content-Type: application/json');
+    echo json_encode($array);
+} else {
+    echo "<tr><td colspan='4'>No se encontraron registros</td></tr>";
+}
 ?>
-            <table class="table table-striped center-table">
-                <thead>
-                    <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Calificación</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    // Realizar la consulta SQL para obtener los datos de la tabla estudiantes
-                    $query = "SELECT * FROM estudiantes";
-                    $result = $conn->query($query);
-
-                    // Verificar si se obtuvieron resultados
-                    if ($result->num_rows > 0) {
-                        // Iterar sobre los resultados y mostrarlos en la tabla
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<tr>";
-                            echo "<td>" . $row['id'] . "</td>";
-                            echo "<td>" . $row['nombre'] . "</td>";
-                            echo "<td>" . $row['apellido'] . "</td>";
-                            echo "<td>" . $row['calificacion'] . "</td>";
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='4'>No se encontraron registros</td></tr>";
-                    }
-                    ?>
-                </tbody>
-            </table>

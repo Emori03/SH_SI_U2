@@ -16,7 +16,7 @@ while ($fila = $usuarios->fetch(PDO::FETCH_ASSOC)) {
     $decrypted_user = openssl_decrypt($encrypted_user, "aes-256-cbc", "llave_secreta", 0, $iv);
     
     $usuarioArray = array(
-        "ID"=>$fila["ID"],
+        "UsuarioID"=>$fila["ID"],
         "Nombre"=>$decrypted_user
     );
     $usuariosArray[] = $usuarioArray;

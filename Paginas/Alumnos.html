@@ -44,7 +44,25 @@
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
             tabindex="0">
-            <h1>Hello</h1>
+            <h1 class="text-decoration-underline">Bienvenido a nuestro sitio</h1>
+            <p class="text lh-sm">tu plataforma centralizada para gestionar tareas, recibir retroalimentación y hacer un seguimiento de tus
+                calificaciones. Nuestra plataforma está diseñada para simplificar el proceso de gestión de tareas y
+                brindarte una experiencia educativa más interactiva y efectiva.
+                <br>
+                Características principales:
+                <br>
+                Verificación de tareas: Accede fácilmente a la lista completa de tareas asignadas por tus profesores.
+                Desde aquí, podrás revisar los detalles de cada tarea, incluyendo la fecha de vencimiento, los
+                requisitos específicos y cualquier material de referencia proporcionado.
+                <br>
+                Retroalimentación interactiva: Una vez que tus tareas sean revisadas, recibirás retroalimentación
+                detallada de tus profesores directamente en nuestra plataforma. Esto te permitirá entender mejor tus
+                áreas de mejora y fortaleza, facilitando tu desarrollo académico.
+                <br>
+                Seguimiento de calificaciones: Mantén un registro actualizado de tus calificaciones en todas tus tareas.
+                Nuestra plataforma te proporcionará acceso instantáneo a tus calificaciones, lo que te permitirá
+                monitorear tu progreso y tomar medidas apropiadas según sea necesario.
+            </p>
         </div>
         <div class="tab-pane fade" id="tareas-tab-pane" role="tabpanel" aria-labelledby="tareas-tab" tabindex="0">
             <div>
@@ -67,7 +85,24 @@
         </div>
         <div class="tab-pane fade" id="calificaciones-tab-pane" role="tabpanel" aria-labelledby="calificaciones-tab"
             tabindex="0">
-            <h1>Hello Calificaciones</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <table class="table table-striped center-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Trabajo</th>
+                                    <th scope="col">Calificación</th>
+                                </tr>
+                            </thead>
+                            <tbody id="calificacionestabla">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Modal -->
